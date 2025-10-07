@@ -35,6 +35,8 @@ namespace AuthDemoApi.Controllers
             };
 
             _context.Users.Add(user);
+            await _context.SaveChangesAsync();
+            
             return Ok("User registered successfully");
         }
 

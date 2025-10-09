@@ -31,7 +31,7 @@ namespace AuthDemoApi.Controllers
             {
                 Username = request.Username,
                 Email = request.Email,
-                PasswordHash = request.Password
+                PasswordHash = _passwordService.HashPassword(request.Password)
             };
 
             _context.Users.Add(user);
